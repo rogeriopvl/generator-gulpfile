@@ -7,7 +7,7 @@ var mocha = require('gulp-mocha');<% } %>
 
 <% if (appType === 'browser') { %>// Edit this values to best suit your app
 var WEB_PORT = 9000;
-var APP_DIR = 'app';<% } else {} %>
+var APP_DIR = 'app';<% } %>
 
 // jshint files
 gulp.task('jshint', function() {
