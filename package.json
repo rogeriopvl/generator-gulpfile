@@ -1,0 +1,43 @@
+{
+  "name": "generator-gulpfile",
+  "version": "0.0.0",
+  "description": "A Gulpfile generator for Yeoman",
+  "keywords": [
+    "yeoman-generator",
+    "gulpfile",
+    "gulp"
+  ],
+  "homepage": "https://github.com/rogeriopvl/generator-gulpfile",
+  "bugs": "https://github.com/rogeriopvl/generator-gulpfile/issues",
+  "author": {
+    "name": "Rogério Vicente",
+    "email": "",
+    "url": "https://github.com/rogeriopvl"
+  },
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rogeriopvl/generator-gulpfile.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "yeoman-generator": "~0.14.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
