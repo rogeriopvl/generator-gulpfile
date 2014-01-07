@@ -1,21 +1,22 @@
-var gulp = require('gulp'); <% if (appType === 'browser') { %>
+var gulp = require('gulp');
+var jshint = require('gulp-jshint');<% if (appType === 'browser') { %>
 var lrserver = require('tiny-lr');
 var livereload = require('gulp-livereload');
-var connect = require('connect'); <% } else {} %>
+var connect = require('connect');<% } else { %>
+var mocha = require('gulp-mocha');<% } %>
 
-// Edit this values to best suit your app
-<% if (appType === 'brower') { %>var WEB_PORT = 9000;
-var APP_DIR = 'app';
-var DIST_DIR = 'dist';<% } else { %>
-<% } else { %>
+<% if (appType === 'browser') { %>// Edit this values to best suit your app
+var WEB_PORT = 9000;
+var APP_DIR = 'app';<% } else {} %>
 
-<% } %>
-
+// jshint files
 gulp.task('jshint', function() {
-    gulp.src('')
+    gulp.src(['test/**/*.js'])
+        .pipe(jshint())
+        .pipe(jshint.reporter());
 });
 
-var lrs = lrserver();
+<% if (appType === 'browser') { %>var lrs = lrserver();
 
 // start livereload server
 gulp.task('lr-server', function() {
@@ -30,6 +31,8 @@ gulp.task('http-server', function() {
     .use(require('connect-livereload')())
     .use(connect.static(APP_DIR))
     .listen(WEB_PORT);
+
+    console.log('Server listening on http://localhost:' + WEB_PORT);
 });
 
 // start local http server with watch and livereload set up
@@ -47,11 +50,15 @@ gulp.task('server', function() {
 });
 
 gulp.task('default', function() {
-    gulp.run('server');
+    gulp.run('jshint', 'server');
 });
 <% } else { %>
 gulp.task('test', function() {
-    gulp.src('**/*.js')
+    gulp.src('test/**/*.js')
         .pipe(mocha({ reporter: 'spec' }));
+});
+
+gulp.task('default', function() {
+    gulp.run('jshint', 'test');
 });
 <% } %>

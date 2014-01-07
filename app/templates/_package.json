@@ -1,5 +1,14 @@
 {
   "name": "package",
   "version": "0.0.0",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+      "gulp": "~3.2.4",
+      "gulp-jshint": "~1.3.4",<% if (appType === 'browser') { %>
+      "gulp-livereload": "~0.1.1",
+      "connect-livereload": "~0.3.2",
+      "tiny-lr": "0.0.5",
+      "connect": "~2.12.0"<% } else { %>
+      "gulp-mocha": "~0.2.0"<% } %>
+  }
 }

@@ -58,5 +58,5 @@ GulpfileGenerator.prototype.app = function app() {
   if (this.createPkgFile) {
       this.copy('_package.json', 'package.json');
   }
-  this.copy('_Gulpfile.js', 'Gulpfile.js');
+  this.template('_Gulpfile.js', 'Gulpfile.js');
 };
