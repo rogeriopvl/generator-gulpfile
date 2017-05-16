@@ -1,5 +1,7 @@
 # generator-gulpfile [![Build Status](https://secure.travis-ci.org/rogeriopvl/generator-gulpfile.png?branch=master)](https://travis-ci.org/rogeriopvl/generator-gulpfile)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rogeriopvl/generator-gulpfile.svg)](https://greenkeeper.io/)
+
 A Gulpfile generator for [Yeoman](http://yeoman.io).
 
 
